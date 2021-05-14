@@ -25,7 +25,6 @@
                             <p>Role: {{ ucfirst($user->getRoleName()) }}</p>
                             <p>Status: {{ ucfirst(strtolower($user->status)) }}</p>
                             <p>Affiliate: {{ $user->affiliate_id }}</p>
-                            <p>API token: {{ $user->getToken() }}</p>
                         </div>
                         <a href="/admin/user/create-token?id={{ $user->id }}">
                             <button class="btn btn-success mb-2">Generate API token</button>

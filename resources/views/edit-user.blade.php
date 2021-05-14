@@ -12,6 +12,8 @@
                         @method("PUT")
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" class="form-control mb-3" value="{{ $user->username }}" required>
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" class="form-control mb-3" value="{{ $user->password }}" required>
                         <label for="email">Email</label>
                         <input type="text" id="email" name="email" class="form-control mb-3" value="{{ $user->email }}" required>
                         <label for="role">Role</label>

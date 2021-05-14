@@ -10,17 +10,10 @@ class HostnameController extends Controller
     {
         $team_id = $request->user()->getTeam()->id;
 
-        $admin_users = User::whereIn('role_id', [1,2])
-            ->where('team_id', $team_id)
-            ->get();
-            
-        $installer_users = User::where('role_id', 3)
-            ->where('team_id', $team_id)
+        $admin_users = User::where('team_id', $team_id)
             ->get();
 
-        $hostnames = $request->user()->is_admin
-            ? Hostname::whereIn('user_id', $admin_users)
-            : Hostname::whereIn('user_id', $installer_users);
+        $hostnames = Hostname::whereIn('user_id', $admin_users)->get();
 
         return view('hostnames', ['hostnames' => $hostnames]);
     }

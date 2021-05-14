@@ -2,6 +2,7 @@
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends \App\Http\Controllers\Controller
 {
@@ -43,6 +44,8 @@ class UserController extends \App\Http\Controllers\Controller
         if ($data['role_id'] === 2) {
             $data['is_admin'] = true;
         }
+
+        $data['password'] = Hash::make($data['password']);
 
         $user->update($data);
 

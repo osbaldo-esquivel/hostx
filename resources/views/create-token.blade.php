@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    @if(! empty($success))
+    @if(session('success'))
         <div class="alert alert-success" role="alert">
-            {{ $success }}
+            {{ session('success') }}
         </div>
     @endif
     <div class="row justify-content-center">
@@ -14,6 +14,8 @@
                 <div class="card-body">
                     <form method="POST" action="/admin/users/create-token">
                         @csrf
+                        <label for="name">Token name</label>
+                        <input type="text" id="name" name="name" class="form-control mb-3">
                         <label for="permissions">Select permissions</label>
                         <select id="permissions" name="permissions[]" class="form-control mb-3" multiple required>
                             @foreach($permissions as $permission)

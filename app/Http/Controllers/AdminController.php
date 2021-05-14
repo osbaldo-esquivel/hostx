@@ -9,17 +9,29 @@ class AdminController extends Controller
     {
         $team_id = $request->user()->getTeam()->id;
 
-        $users = User::where('team_id', $team_id)->get();
+        $users = $request->user()->is_admin
+            ? User::where('team_id', $team_id)
+                ->get()
+            : collect([]);
+
         return view('admin', ['users' => $users]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        if (! $request->user()->is_admin) {
+            return back()->withErrors(['error' => 'Not an admin']);
+        }
+
         return view('create-user');
     }
 
     public function edit(Request $request)
     {
+        if (! $request->user()->is_admin) {
+            return back()->withErrors(['error' => 'Not an admin']);
+        }
+
         $user = User::find($request->id);
 
         return view('edit-user', ['user' => $user]);
@@ -27,6 +39,10 @@ class AdminController extends Controller
 
     public function createToken(Request $request)
     {
+        if (! $request->user()->is_admin) {
+            return back()->withErrors(['error' => 'Not an admin']);
+        }
+
         $user = User::find($request->id);
         $permissions = [
             'hostnames:read',
@@ -45,10 +61,14 @@ class AdminController extends Controller
 
     public function generateToken(Request $request)
     {
+        if (! $request->user()->is_admin) {
+            return back()->withErrors(['error' => 'Not an admin']);
+        }
+
         $user = User::find($request->user_id);
         $permissions = $request->permissions;
 
-        $token = $user->createToken('eski', $permissions)->plainTextToken;
+        $token = $user->createToken($request->name, $permissions)->plainTextToken;
 
         $user->setToken($token);
         
