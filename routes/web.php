@@ -27,8 +27,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/hostnames', 'HostnameController@index')->name('hostnames');
     Route::get('/hostnames/create', 'HostnameController@create');
+    Route::get('/hostnames/edit', 'HostnameController@edit');
 
     Route::get('/billing', 'BillingController@index')->name('billing');
 
     Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/admin/user/create', 'AdminController@create');
+    Route::get('/admin/user/edit', 'AdminController@edit');
+    Route::get('/admin/user/create-token', 'AdminController@createToken');
+    Route::post('/admin/users/create-token', 'AdminController@generateToken');
 });

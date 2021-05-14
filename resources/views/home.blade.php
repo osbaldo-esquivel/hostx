@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <img height="30px" width="30px" src="/images/{{ Auth::user()->getTeamName() }}.png">
+                    <img height="40px" width="60px" src="/images/{{ Auth::user()->getTeamName() }}.png">
                     Welcome, {{ ucfirst(Auth::user()->username) }}
                 </div>
             </div>

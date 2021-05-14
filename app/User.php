@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -39,9 +38,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getTeamName()
+    public function getTeamName(): ?string
     {
         return $this->getTeam()->name;
+    }
+
+    public function getRoleName(): ?string
+    {
+        return $this->getRole()->name;
+    }
+
+    public function getRole()
+    {
+        return $this->role()->first();
     }
 
     public function getTeam()
@@ -49,8 +58,34 @@ class User extends Authenticatable
         return $this->team()->first();
     }
 
-    private function team()
+    public function getToken()
+    {
+        $this->token()->first()
+            ? $this->token()->token
+            : null;
+    }
+
+    public function setToken(string $token_id)
+    {
+        $this->token_id = $token_id;
+
+        $this->save();
+
+        return $this;
+    }
+
+    private function role(): HasOne
+    {
+        return $this->hasOne(Role::class, 'id', 'role_id');
+    }
+
+    private function team(): HasOne
     {
         return $this->hasOne(Team::class, 'id', 'team_id');
+    }
+
+    private function token()
+    {
+        return $this->hasOne(ApiToken::class, 'id', 'token_id');
     }
 }

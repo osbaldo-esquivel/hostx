@@ -7,12 +7,13 @@
             <div class="card">
                 <div class="card-header">Create Hostname</div>
                 <div class="card-body">
-                    <form action="/hostnames/create" method="POST">
+                    <form action="/api/hostnames?from=app" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <label for="name">Hostname</label>
-                            <input type="text" id="name" name="name" class="form-control mb-3">
-                            <label for="domain">Domain</label>
-                            <select id="domain" name="domain" class="form-control mb-3">
+                            <label for="domain">Hostname</label>
+                            <input type="text" id="domain" name="domain" class="form-control mb-3">
+                            <label for="tld">Domain</label>
+                            <select id="tld" name="tld" class="form-control mb-3">
                                 @foreach(['ddns.net', 'hopto.org', 'webhop.me'] as $tld)
                                     <option value="{{ $tld }}">{{ $tld }}</option>
                                 @endforeach
@@ -38,6 +39,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
                     </form>

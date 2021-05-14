@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('users', 'Api\UserController@index');
-Route::get('users/{user}', 'Api\UserController@show');
+Route::get('users/{ id }', 'Api\UserController@show');
 Route::post('users', 'Api\UserController@store');
-Route::put('users/{user}', 'Api\UserController@update');
-Route::delete('users/{user}', 'Api\UserController@delete');
+Route::put('users', 'Api\UserController@update');
+Route::delete('users', 'Api\UserController@delete');
 
 Route::get('hostnames', 'Api\HostnameController@index');
-Route::get('hostnames/{hostname}', 'Api\HostnameController@show');
+Route::get('hostnames/{ id }', 'Api\HostnameController@show');
 Route::post('hostnames', 'Api\HostnameController@store');
-Route::put('hostnames/{hostname}', 'Api\HostnameController@update');
-Route::delete('hostnames/{hostname}', 'Api\HostnameController@delete');
+Route::put('hostnames', 'Api\HostnameController@update');
+Route::delete('hostnames', 'Api\HostnameController@delete');
