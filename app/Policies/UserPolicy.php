@@ -16,7 +16,7 @@ class UserPolicy
      * @return mixed
      */
     public function viewAny(User $user)
-    {dd($user);
+    {
         return $user->is_admin;
     }
 
@@ -28,7 +28,7 @@ class UserPolicy
      * @return mixed
      */
     public function view(User $user, User $model)
-    {dd($user);
+    {
         return $user->id === $model->id;
     }
 
@@ -39,7 +39,7 @@ class UserPolicy
      * @return mixed
      */
     public function create(User $user)
-    {dd($user);
+    {
         return $user->is_admin;
     }
 
