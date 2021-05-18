@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('users', 'Api\UserController@index');
+Route::get('users', 'Api\UserController@index')
+    ->middleware('can:view, App\User');
 Route::get('users/{ id }', 'Api\UserController@show');
 Route::post('users', 'Api\UserController@store');
 Route::put('users', 'Api\UserController@update');
