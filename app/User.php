@@ -5,11 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -58,22 +57,6 @@ class User extends Authenticatable
         return $this->team()->first();
     }
 
-    public function getToken()
-    {
-        $this->token()->first()
-            ? $this->token()->token
-            : null;
-    }
-
-    public function setToken(string $token_id)
-    {
-        $this->token_id = $token_id;
-
-        $this->save();
-
-        return $this;
-    }
-
     private function role(): HasOne
     {
         return $this->hasOne(Role::class, 'id', 'role_id');
@@ -82,10 +65,5 @@ class User extends Authenticatable
     private function team(): HasOne
     {
         return $this->hasOne(Team::class, 'id', 'team_id');
-    }
-
-    private function token()
-    {
-        return $this->hasOne(ApiToken::class, 'id', 'token_id');
     }
 }

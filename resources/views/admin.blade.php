@@ -26,9 +26,6 @@
                             <p>Status: {{ ucfirst(strtolower($user->status)) }}</p>
                             <p>Affiliate: {{ $user->affiliate_id }}</p>
                         </div>
-                        <a href="/admin/user/create-token?id={{ $user->id }}">
-                            <button class="btn btn-success mb-2">Generate API token</button>
-                        </a>
                         <a href="/admin/user/edit?id={{ $user->id }}">
                             <button class="btn btn-primary mb-2">Edit user</button>
                         </a>

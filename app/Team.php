@@ -4,5 +4,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
+    public function getUsers()
+    {
+        return $this->users()->get();
+    }
 
+    private function users()
+    {
+        return $this->hasMany(User::class, 'id', 'user_id');
+    }
 }

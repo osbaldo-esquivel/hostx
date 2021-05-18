@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2601612f20fd07b33f35a0cae1216683",
+    "content-hash": "3f0cbed8dbcdf7320c8ab58d4ac442ff",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -117,6 +117,192 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
+        },
+        {
+            "name": "casbin/casbin",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-casbin/php-casbin.git",
+                "reference": "a7c1cfa896c85d468f6fe608f3831d08dcea30d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-casbin/php-casbin/zipball/a7c1cfa896c85d468f6fe608f3831d08dcea30d7",
+                "reference": "a7c1cfa896c85d468f6fe608f3831d08dcea30d7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "s1lentium/iptools": "^1.1",
+                "symfony/expression-language": "^3.4|^4.0|^5.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "~7.0|~8.0|~9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Casbin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "TechLee",
+                    "email": "techlee@qq.com"
+                }
+            ],
+            "description": "a powerful and efficient open-source access control library for php projects.",
+            "keywords": [
+                "abac",
+                "access control",
+                "acl",
+                "authorization",
+                "casbin",
+                "permission",
+                "rbac"
+            ],
+            "support": {
+                "issues": "https://github.com/php-casbin/php-casbin/issues",
+                "source": "https://github.com/php-casbin/php-casbin/tree/v3.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/casbin",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2021-05-06T08:01:10+00:00"
+        },
+        {
+            "name": "casbin/laravel-authz",
+            "version": "v2.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-casbin/laravel-authz.git",
+                "reference": "cc73dea28aa92dd7757cd7b7da63ee69835b6325"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-casbin/laravel-authz/zipball/cc73dea28aa92dd7757cd7b7da63ee69835b6325",
+                "reference": "cc73dea28aa92dd7757cd7b7da63ee69835b6325",
+                "shasum": ""
+            },
+            "require": {
+                "casbin/casbin": "~3.1",
+                "casbin/psr3-bridge": "^1.1",
+                "laravel/framework": "~5.5|~6.0|~7.0|~8.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5|~6.0|~7.0|~8.0",
+                "mockery/mockery": "^1.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpunit/phpunit": "~7.0|~8.0|~9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lauthz\\LauthzServiceProvider"
+                    ],
+                    "aliases": {
+                        "Enforcer": "Lauthz\\Facades\\Enforcer"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lauthz\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "TechLee",
+                    "email": "techlee@qq.com"
+                }
+            ],
+            "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Laravel. ",
+            "keywords": [
+                "abac",
+                "access-control",
+                "acl",
+                "authorization",
+                "authz",
+                "casbin",
+                "laravel",
+                "permission",
+                "rbac"
+            ],
+            "support": {
+                "issues": "https://github.com/php-casbin/laravel-authz/issues",
+                "source": "https://github.com/php-casbin/laravel-authz/tree/v2.3.4"
+            },
+            "time": "2021-05-06T08:17:40+00:00"
+        },
+        {
+            "name": "casbin/psr3-bridge",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-casbin/psr3-bridge.git",
+                "reference": "846be79ddb0cbf1bcc85f0f63879cf966538ad36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-casbin/psr3-bridge/zipball/846be79ddb0cbf1bcc85f0f63879cf966538ad36",
+                "reference": "846be79ddb0cbf1bcc85f0f63879cf966538ad36",
+                "shasum": ""
+            },
+            "require": {
+                "casbin/casbin": "^2.0|^3.0",
+                "psr/log": "^1.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "~7.0|~8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Casbin\\Bridge\\Logger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "TechLee",
+                    "email": "techlee@qq.com"
+                }
+            ],
+            "description": "This library provides a PSR-3 compliant bridge for Casbin Logger.",
+            "keywords": [
+                "acl",
+                "casbin",
+                "logger",
+                "permission",
+                "psr-3",
+                "rbac"
+            ],
+            "support": {
+                "issues": "https://github.com/php-casbin/psr3-bridge/issues",
+                "source": "https://github.com/php-casbin/psr3-bridge/tree/v1.3.0"
+            },
+            "time": "2020-12-24T09:24:22+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -956,70 +1142,6 @@
             "time": "2021-01-21T14:10:48+00:00"
         },
         {
-            "name": "laravel/sanctum",
-            "version": "v2.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/sanctum.git",
-                "reference": "3ed8f60dafef026acc21733366a08746a7bd176e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/3ed8f60dafef026acc21733366a08746a7bd176e",
-                "reference": "3ed8f60dafef026acc21733366a08746a7bd176e",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "illuminate/contracts": "^6.9|^7.0|^8.0",
-                "illuminate/database": "^6.9|^7.0|^8.0",
-                "illuminate/support": "^6.9|^7.0|^8.0",
-                "php": "^7.2|^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "^8.0|^9.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Sanctum\\SanctumServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Sanctum\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
-            "keywords": [
-                "auth",
-                "laravel",
-                "sanctum"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/sanctum/issues",
-                "source": "https://github.com/laravel/sanctum"
-            },
-            "time": "2021-05-11T21:03:57+00:00"
-        },
-        {
             "name": "laravel/tinker",
             "version": "v2.6.1",
             "source": {
@@ -1774,6 +1896,55 @@
             "time": "2020-07-20T17:29:33+00:00"
         },
         {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
+            "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.1.1",
             "source": {
@@ -2366,6 +2537,61 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
+            "name": "s1lentium/iptools",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/S1lentium/IPTools.git",
+                "reference": "f6f8ab6132ca7443bd7cced1681f5066d725fd5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/S1lentium/IPTools/zipball/f6f8ab6132ca7443bd7cced1681f5066d725fd5f",
+                "reference": "f6f8ab6132ca7443bd7cced1681f5066d725fd5f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "IPTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Safarov Alisher",
+                    "email": "alisher.safarov@outlook.com",
+                    "homepage": "https://github.com/S1lentium"
+                }
+            ],
+            "description": "PHP Library for manipulating network addresses (IPv4 and IPv6)",
+            "keywords": [
+                "IP",
+                "IP-Tools",
+                "cidr",
+                "ipv4",
+                "ipv6",
+                "network",
+                "subnet"
+            ],
+            "support": {
+                "issues": "https://github.com/S1lentium/IPTools/issues",
+                "source": "https://github.com/S1lentium/IPTools/tree/master"
+            },
+            "time": "2018-09-19T06:15:53+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.7",
             "source": {
@@ -2439,6 +2665,180 @@
                 }
             ],
             "time": "2021-03-09T12:30:35+00:00"
+        },
+        {
+            "name": "symfony/cache",
+            "version": "v5.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache.git",
+                "reference": "c13bfc6682a669e6ba592ba3305139ebf946a811"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/c13bfc6682a669e6ba592ba3305139ebf946a811",
+                "reference": "c13bfc6682a669e6ba592ba3305139ebf946a811",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/cache": "^1.0|^2.0",
+                "psr/log": "^1.1",
+                "symfony/cache-contracts": "^1.1.7|^2",
+                "symfony/polyfill-php80": "^1.15",
+                "symfony/service-contracts": "^1.1|^2",
+                "symfony/var-exporter": "^4.4|^5.0"
+            },
+            "conflict": {
+                "doctrine/dbal": "<2.10",
+                "symfony/dependency-injection": "<4.4",
+                "symfony/http-kernel": "<4.4",
+                "symfony/var-dumper": "<4.4"
+            },
+            "provide": {
+                "psr/cache-implementation": "1.0|2.0",
+                "psr/simple-cache-implementation": "1.0",
+                "symfony/cache-implementation": "1.0|2.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "dev-master",
+                "doctrine/cache": "^1.6",
+                "doctrine/dbal": "^2.10|^3.0",
+                "predis/predis": "^1.1",
+                "psr/simple-cache": "^1.0",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/filesystem": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0",
+                "symfony/messenger": "^4.4|^5.0",
+                "symfony/var-dumper": "^4.4|^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Cache\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an extended PSR-6, PSR-16 (and tags) implementation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "caching",
+                "psr6"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/cache/tree/v5.2.8"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-07T13:41:16+00:00"
+        },
+        {
+            "name": "symfony/cache-contracts",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache-contracts.git",
+                "reference": "c0446463729b89dd4fa62e9aeecc80287323615d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/c0446463729b89dd4fa62e9aeecc80287323615d",
+                "reference": "c0446463729b89dd4fa62e9aeecc80287323615d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/cache": "^1.0|^2.0|^3.0"
+            },
+            "suggest": {
+                "symfony/cache-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.4-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Cache\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to caching",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/cache-contracts/tree/v2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-23T23:28:01+00:00"
         },
         {
             "name": "symfony/console",
@@ -2901,6 +3301,70 @@
                 }
             ],
             "time": "2021-03-23T23:28:01+00:00"
+        },
+        {
+            "name": "symfony/expression-language",
+            "version": "v5.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/expression-language.git",
+                "reference": "c8bb14c3bcc397845d7e86a1cc5022671eed1ff8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/c8bb14c3bcc397845d7e86a1cc5022671eed1ff8",
+                "reference": "c8bb14c3bcc397845d7e86a1cc5022671eed1ff8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/cache": "^4.4|^5.0",
+                "symfony/polyfill-php80": "^1.15",
+                "symfony/service-contracts": "^1.1|^2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\ExpressionLanguage\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an engine that can compile and evaluate expressions",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/expression-language/tree/v5.3.0-BETA1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-04-07T16:07:52+00:00"
         },
         {
             "name": "symfony/finder",
@@ -4609,6 +5073,79 @@
                 }
             ],
             "time": "2021-04-19T14:07:32+00:00"
+        },
+        {
+            "name": "symfony/var-exporter",
+            "version": "v5.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-exporter.git",
+                "reference": "d26db2d2b2d7eb2c1adb8545179f8803998b8237"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/d26db2d2b2d7eb2c1adb8545179f8803998b8237",
+                "reference": "d26db2d2b2d7eb2c1adb8545179f8803998b8237",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "^4.4.9|^5.0.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\VarExporter\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Allows exporting any serializable PHP data structure to plain PHP code",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "clone",
+                "construct",
+                "export",
+                "hydrate",
+                "instantiate",
+                "serialize"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-exporter/tree/v5.3.0-BETA3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-07T13:42:21+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

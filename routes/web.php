@@ -25,15 +25,19 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/hostnames', 'HostnameController@index')->name('hostnames');
-    Route::get('/hostnames/create', 'HostnameController@create');
-    Route::get('/hostnames/edit', 'HostnameController@edit');
+    Route::get('/hostnames', 'HostnameController@index')->name('hostnames')
+        ->middleware('can:view,App\Hostname');
+    Route::get('/hostnames/create', 'HostnameController@create')
+        ->middleware('can:create,App\Hostname');
+    Route::get('/hostnames/edit', 'HostnameController@edit')
+        ->middleware('can:update,App\Hostname');
 
     Route::get('/billing', 'BillingController@index')->name('billing');
 
-    Route::get('/admin', 'AdminController@index')->name('admin');
-    Route::get('/admin/user/create', 'AdminController@create');
-    Route::get('/admin/user/edit', 'AdminController@edit');
-    Route::get('/admin/user/create-token', 'AdminController@createToken');
-    Route::post('/admin/users/create-token', 'AdminController@generateToken');
+    Route::get('/admin', 'AdminController@index')->name('admin')
+        ->middleware('can:view,App\Admin');
+    Route::get('/admin/user/create', 'AdminController@create')
+        ->middleware('can:create,App\Admin');
+    Route::get('/admin/user/edit', 'AdminController@edit')
+        ->middleware('can:edit, App\Admin');
 });
