@@ -1,3 +1,3 @@
 ## Hostx
 
-This app was created to test Laravel contracts and policies.
+This app was created to test Laravel policies for user authentication and with an API.
